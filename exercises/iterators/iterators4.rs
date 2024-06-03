@@ -3,19 +3,19 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+pub fn factorial(mut num: u64) -> u64 {
+    if num == 0 {
+       num = 1 
+    }
+    let numbers: Vec<u64> = (1..=num).collect();
+    println!("the numbers vec {:?}", numbers);
 
-pub fn factorial(num: u64) -> u64 {
-    // Complete this function to return the factorial of num
-    // Do not use:
-    // - return
-    // Try not to use:
-    // - imperative style loops (for, while)
-    // - additional variables
-    // For an extra challenge, don't use:
-    // - recursion
-    // Execute `rustlings hint iterators4` for hints.
+    let result  = numbers.iter().rfold(1, |acc, &x| acc * x);
+
+    println!("the result is {}", result);
+    return result;
 }
+
 
 #[cfg(test)]
 mod tests {
